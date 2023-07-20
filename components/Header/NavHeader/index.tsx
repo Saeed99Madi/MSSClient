@@ -1,5 +1,3 @@
-import { MenuItem, Select } from '@mui/material';
-
 import useTranslation from 'next-translate/useTranslation';
 import { useEffect, useState } from 'react';
 
@@ -16,14 +14,6 @@ import {
   Navigations,
   NavItems,
 } from '../components.styled';
-
-const categoryItem = {
-  fontStyle: 'italic',
-  fontWeight: 'bold',
-  margin: '5px 0px',
-  color: '#000000',
-  opacity: '1 !important',
-};
 
 export const NavHeader = () => {
   const [active, setActive] = useState(false);

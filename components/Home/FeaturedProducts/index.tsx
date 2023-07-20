@@ -1,4 +1,4 @@
-import { ImageList, ImageListItem, useMediaQuery } from '@mui/material';
+import { ImageList, useMediaQuery } from '@mui/material';
 
 import {
   BlackButton,
