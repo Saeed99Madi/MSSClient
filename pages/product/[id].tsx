@@ -19,6 +19,7 @@ const Product = () => {
     }
     (async () => {
       try {
+        //lkjhgf
         const { data } = await Axios.get(`product/${id}`);
         setProduct(data.data[0]);
       } catch (err) {
