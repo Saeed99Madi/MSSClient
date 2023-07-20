@@ -12,7 +12,7 @@ const HeadSection = () => {
   return (
     <HeadContainer>
       <LogoWrapper>
-        <Image src={`${BASE_UEL}settings/Group.png`} alt="logo" />
+        <Image src={"https://res.cloudinary.com/dt0jfo5xi/image/upload/v1689850157/msr87v9ann0kh1mskum2.png"} alt="logo" />
         <HeadText>SOLAR MSS INVERTER</HeadText>
         <HeadParagraph>ENGINEERED FOR SOLAR</HeadParagraph>
       </LogoWrapper>
