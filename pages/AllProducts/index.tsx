@@ -5,7 +5,6 @@ import PaginationItem from '@mui/material/PaginationItem';
 import { Axios } from '../../config';
 import { IProduct } from '../../interfaces/IProduct';
 import { ICategory } from '../../interfaces/ICategory';
-// import ProductCard from './ProductCard';
 import {
   HeadContainer,
   HeadText,

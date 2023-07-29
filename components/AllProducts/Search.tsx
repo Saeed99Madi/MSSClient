@@ -11,12 +11,7 @@ interface SearchProps {
   setProducts: (products: IProduct[]) => void;
 }
 
-const SearchBar: React.FC<SearchProps> = ({
-  setSearchKey,
-  searchKey,
-  selectedCategory,
-  setProducts,
-}) => {
+const SearchBar: React.FC<SearchProps> = ({ setSearchKey, setProducts }) => {
   const handleSearch = (event: ChangeEvent<HTMLInputElement>) => {
     const searchText = event.target.value;
     setSearchKey(searchText);
