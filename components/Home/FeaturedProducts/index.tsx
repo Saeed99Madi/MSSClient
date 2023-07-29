@@ -16,7 +16,7 @@ type Props = {
 
 const FeaturedProducts = ({ products }: Props) => {
   const matches = useMediaQuery('(min-width:600px)');
-  const partOfProducts = products.length > 8 ? products.slice(0, 8) : products;
+  const partOfProducts = products?.length > 8 ? products.slice(0, 8) : products;
 
   return (
     <ProductsListContainer>
@@ -32,7 +32,7 @@ const FeaturedProducts = ({ products }: Props) => {
           cols={matches ? 4 : 2}
         >
           {products ? (
-            partOfProducts.map(item => <Card product={item} />)
+            partOfProducts.map(item => <Card key={item.id} product={item} />)
           ) : (
             <p>no Products</p>
           )}
