@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Typography } from '@mui/material';
 
 import {
@@ -11,14 +12,14 @@ import {
   CustomButton,
   ReflectedIconWrapper,
 } from './components.styled';
-
-// type Props = {
-//   error: { error: string };
-// };
+import ContactForm from '../../ContactSaid/ContactForm';
 
 const ContactSection = () => {
+  const [openForm, SetOpenForm] = useState<boolean>(false);
+
   return (
-    <ContactContainer>
+    <ContactContainer id="contact">
+      <ContactForm open={openForm} setOpen={SetOpenForm} />
       <ContactCard>
         <IconWrapper>
           <ImageIcon
@@ -50,6 +51,7 @@ const ContactSection = () => {
               sx={{
                 background: 'linear-gradient(90deg, #EA4335 0%, #2E7DFF 100%)',
               }}
+              onClick={() => SetOpenForm(true)}
             >
               Contact Us
             </CustomButton>

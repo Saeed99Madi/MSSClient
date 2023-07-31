@@ -8,7 +8,7 @@ import Layout from '../layouts/main';
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <Layout>
-      <Component {...pageProps} />
+      <Component style={{ scrollBehavior: 'smooth' }} {...pageProps} />
     </Layout>
   );
 };
