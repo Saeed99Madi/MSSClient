@@ -69,7 +69,6 @@ const ContactByWhatsApp = ({
         />
         <WhatsAppSectionWrapper>
           <LogoWrapper>
-            {/* <ImageIcon src="/assets/logo.png" alt="contact" /> */}
             <Logo />
           </LogoWrapper>
           {openWhatsApp && <SubmitBtn whatsapp>Chat with us</SubmitBtn>}

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from 'next/link';
 
 import { Typography } from '@mui/material';
 
@@ -93,7 +94,16 @@ const ConatctWithForms = () => {
                 background: 'linear-gradient(90deg, #25D366 0%, #128C7E 100%)',
               }}
             >
-              Contact Us
+              <Link
+                style={{
+                  textDecoration: 'none',
+                  color: '#FFFFFF',
+                }}
+                href="https://api.whatsapp.com/send?phone=970599266293"
+                target="_blank"
+              >
+                Contact Us
+              </Link>
             </CustomButton>
           </BoxColumn>
         </BoxColumn>
