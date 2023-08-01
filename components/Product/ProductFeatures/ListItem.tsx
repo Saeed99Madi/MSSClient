@@ -27,13 +27,13 @@ const ListItem = ({ feature }: Props) => {
   return (
     <FeaturesList aria-labelledby="nested-list-subheader">
       <ListItemButton onClick={handleClick}>
-        <ListItemText primary={`${feature.title}`} />
+        <ListItemText primary={feature.title} />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItemButton>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
           <ListItemButton sx={{ pl: 4 }}>
-            <ListItemText primary={`${feature.description}`} />
+            <ListItemText primary={feature.description} />
           </ListItemButton>
         </List>
       </Collapse>

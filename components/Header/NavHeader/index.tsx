@@ -1,6 +1,8 @@
 import useTranslation from 'next-translate/useTranslation';
 import { useEffect, useState } from 'react';
 
+import { Typography } from '@mui/material';
+
 import { Axios } from '../../../config';
 import { ICategory } from '../../../interfaces/ICategory';
 
@@ -10,7 +12,6 @@ import {
   Diversity1IconNav,
   HomeIconNav,
   HomeRepairServiceIconNav,
-  NavigationAnchor,
   Navigations,
   NavItems,
 } from '../components.styled';
@@ -28,8 +29,10 @@ export const NavHeader = () => {
   }, []);
 
   useEffect(() => {}, [categories]);
-  const menuDisActive = () => {
+  const menuDisActive = (path: string) => {
     setActive(false);
+    // eslint-disable-next-line no-restricted-globals
+    location.href = path;
   };
   const menuActive = () => {
     setActive(true);
@@ -39,22 +42,34 @@ export const NavHeader = () => {
 
   return (
     <>
-      <Navigations className={active ? 'navigation active' : 'navigation'}>
+      <Navigations
+        sx={{ ml: active ? 'auto' : 15 }}
+        className={active ? 'navigation active' : 'navigation'}
+      >
         <NavItems className="nav-items">
-          <CloseIconNav onClick={menuDisActive} />
+          <CloseIconNav onClick={() => menuDisActive('/')} />
 
-          <NavigationAnchor href="/" onClick={menuDisActive}>
+          <Typography
+            sx={{ cursor: 'pointer' }}
+            onClick={() => menuDisActive('/')}
+          >
             <HomeIconNav />
             {t('Home')}
-          </NavigationAnchor>
-          <NavigationAnchor href="/contacts" onClick={menuDisActive}>
+          </Typography>
+          <Typography
+            sx={{ cursor: 'pointer' }}
+            onClick={() => menuDisActive('/contacts')}
+          >
             <Diversity1IconNav />
             {t('Contact Us')}
-          </NavigationAnchor>
-          <NavigationAnchor href="/contacts" onClick={menuDisActive}>
+          </Typography>
+          <Typography
+            sx={{ cursor: 'pointer' }}
+            onClick={() => menuDisActive('#services')}
+          >
             <HomeRepairServiceIconNav />
             {t('who we are')}
-          </NavigationAnchor>
+          </Typography>
         </NavItems>
       </Navigations>
       <AppsIconNav onClick={menuActive} />

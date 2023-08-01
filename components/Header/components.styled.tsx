@@ -18,7 +18,6 @@ import Diversity1Icon from '@mui/icons-material/Diversity1';
 import HomeRepairServiceIcon from '@mui/icons-material/HomeRepairService';
 import CloseIcon from '@mui/icons-material/Close';
 import AppsIcon from '@mui/icons-material/Apps';
-import Link from 'next/link';
 
 const IconsStyle = {
   display: 'none',
@@ -81,25 +80,6 @@ const StyledHeader = styled('header')({
   },
 });
 
-const NavigationAnchor = styled(Link)({
-  color: '#000116',
-  fontSize: '1em',
-  textDecoration: 'none',
-  marginLeft: '50px',
-  fontWeight: '560',
-  '@media screen and (max-width: 850px)': {
-    display: 'flex',
-    flexWrap: 'noWrap',
-    textAlign: 'center',
-    verticalAlign: 'central',
-    // alienItems: 'center',
-    gap: '1rem',
-    color: '#222',
-    fontSize: '1em',
-    margin: '15px 50px',
-  },
-});
-
 const Navigations = styled(Box)({
   '.nav-items': {
     justifyContent: 'center',
@@ -148,6 +128,10 @@ const Navigations = styled(Box)({
 
 const NavItems = styled('nav')({
   fontWeight: '500',
+  display: 'flex',
+  gap: '40px',
+  alignItems: 'center',
+  justifyContent: 'center',
 });
 
 const LogoImage = styled('img')({
@@ -291,7 +275,6 @@ export {
   HomeRepairServiceIconNav,
   Diversity1IconNav,
   LogoImage,
-  NavigationAnchor,
   ActionsBox,
   SearchInput,
   SearchInputIcon,

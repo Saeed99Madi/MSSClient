@@ -5,7 +5,7 @@ import PaginationItem from '@mui/material/PaginationItem';
 import { Axios } from '../../config';
 import { IProduct } from '../../interfaces/IProduct';
 import { ICategory } from '../../interfaces/ICategory';
-// import ProductCard from './ProductCard';
+
 import {
   HeadContainer,
   HeadText,
@@ -66,6 +66,7 @@ const AllProduct = () => {
           setIsGetData(false);
         }
       } catch (error) {
+        // eslint-disable-next-line no-console
         console.log('Error occurred while fetching data:', error);
         setIsLoading(false);
       }
@@ -103,7 +104,7 @@ const AllProduct = () => {
           <NoDataFound />
         ) : (
           products?.map((product: IProduct) => (
-            <ProductCard product={product} />
+            <ProductCard key={product.id} product={product} />
           ))
         )}
       </CardsWrapper>

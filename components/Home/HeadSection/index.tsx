@@ -9,7 +9,7 @@ import {
 
 const HeadSection = () => {
   return (
-    <HeadContainer>
+    <HeadContainer id="home">
       <LogoWrapper>
         <Image
           src="https://res.cloudinary.com/dt0jfo5xi/image/upload/v1689850157/msr87v9ann0kh1mskum2.png"

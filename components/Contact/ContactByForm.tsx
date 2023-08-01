@@ -123,7 +123,7 @@ const ContactByForm = ({
               onChange(e);
               setError(false);
             }}
-            value={`${values.name}`}
+            value={values.name}
           />
           <CustomTextField
             id="email"
@@ -135,7 +135,7 @@ const ContactByForm = ({
               onChange(e);
               setError(false);
             }}
-            value={`${values.email}`}
+            value={values.email}
           />
           <CustomTextField
             id="outlined-required"
@@ -148,7 +148,7 @@ const ContactByForm = ({
               onChange(e);
               setError(false);
             }}
-            value={`${values.subjectTitle}`}
+            value={values.subjectTitle}
           >
             {subjects.map(option => (
               <MenuItem key={option.value} value={option.value}>
@@ -167,7 +167,7 @@ const ContactByForm = ({
               onChange(e);
               setError(false);
             }}
-            value={`${values.subject}`}
+            value={values.subject}
           />
 
           {openForm && (

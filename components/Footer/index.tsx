@@ -28,23 +28,14 @@ const Footer = () => {
       <Grid container justifyContent="center">
         <Grid item>
           <Tooltip disableFocusListener title="Home">
-            <Link sx={LinkStyle} href="/">
+            <Link sx={LinkStyle} href="#home">
               Home
             </Link>
           </Tooltip>
         </Grid>
-
         <Grid item>
           <Tooltip disableFocusListener title="Home">
-            <Link sx={LinkStyle} href="/">
-              All Categories
-            </Link>
-          </Tooltip>
-        </Grid>
-
-        <Grid item>
-          <Tooltip disableFocusListener title="Home">
-            <Link sx={LinkStyle} href="/">
+            <Link sx={LinkStyle} href="#contact">
               Contact Us
             </Link>
           </Tooltip>
@@ -52,8 +43,8 @@ const Footer = () => {
 
         <Grid item>
           <Tooltip disableFocusListener title="Home">
-            <Link sx={LinkStyle} href="/">
-              About Us
+            <Link sx={LinkStyle} href="#services">
+              who we are
             </Link>
           </Tooltip>
         </Grid>
