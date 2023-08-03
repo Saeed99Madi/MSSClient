@@ -182,7 +182,7 @@ const TextContainer = styled(Box)({
   position: 'absolute',
   left: '50%',
   transform: 'translate(-50%)',
-})
+});
 
 export {
   HeadContainer,
@@ -201,5 +201,5 @@ export {
   ProductLink,
   CardContent,
   CardImage,
-  TextContainer
+  TextContainer,
 };

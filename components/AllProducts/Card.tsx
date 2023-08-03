@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
-import { Box, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import { IProduct } from '../../interfaces/IProduct';
-import { CardContainer, CardContent, CardImage, ProductLink, TextContainer } from './components.styled';
+import {
+  CardContainer,
+  CardContent,
+  CardImage,
+  ProductLink,
+  TextContainer,
+} from './components.styled';
 
 interface CardProps {
   product: IProduct;
@@ -41,7 +47,7 @@ const Card = ({ product }: CardProps) => {
         <TextContainer
           sx={{
             top: hover ? '100px' : '0',
-            gap: '15px'
+            gap: '15px',
           }}
         >
           <Typography
@@ -66,8 +72,7 @@ const Card = ({ product }: CardProps) => {
             mt: hover ? null : 'calc(30% + 30px)',
             mb: hover ? 0 : '10px',
           }}
-        >
-        </CardImage>
+        />
       </CardContent>
     </CardContainer>
   );
