@@ -27,4 +27,5 @@ export interface IProduct {
   updatedAt?: string;
   checked?: boolean;
   Category: { title: string };
+  
 }

@@ -19,9 +19,9 @@ import {
 } from '../../components/AllProducts/components.styled';
 import SearchBar from '../../components/AllProducts/Search';
 import Select from '../../components/AllProducts/Select';
-import ProductCard from '../../components/AllProducts/ProductCard';
 import Loader from '../../components/Loader';
 import NoDataFound from '../../components/NoDataFound';
+import Card from '../../components/AllProducts/Card';
 
 const AllProduct = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -104,7 +104,7 @@ const AllProduct = () => {
           <NoDataFound />
         ) : (
           products?.map((product: IProduct) => (
-            <ProductCard key={product.id} product={product} />
+            <Card key={product.id} product={product} />
           ))
         )}
       </CardsWrapper>
