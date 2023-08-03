@@ -108,68 +108,6 @@ const VerticalLine = styled('div')({
   height: '35px',
 });
 
-const CardContainer = styled('div')`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 270px;
-  height: 375px;
-  border: 1px solid #ccc;
-  h3 {
-    transition: all 0.3s ease-in-out;
-  }
-  background-color: #f1f1f1;
-  border-radius: 40px;
-  flex: 1 1 200px;
-  &:hover {
-    .section-one {
-      display: none;
-    }
-
-    .section-two {
-      margin-bottom: 0px;
-    }
-    .section-three {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding-top: 1rem;
-    }
-  }
-`;
-
-const SectionOne = styled('div')`
-  display: block;
-  text-align: center;
-  padding: 16px;
-`;
-
-const SectionThree = styled('div')`
-  display: none;
-  background-color: #1f1f22;
-  width: 100%;
-  height: 100px;
-  transition: all 0.3s ease-in-out;
-  border-radius: 0 0 40px 40px;
-  color: #fff;
-  text-align: center;
-  cursor: pointer;
-  div {
-    width: 100%;
-    height: 2rem;
-    border-radius: 0 0 40px 40px;
-    background-color: #f1f1f1;
-    border-top: 5px solid #f1f1f1 !important;
-  }
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-  margin-top: 0;
-  padding-top: 0 !important;
-`;
-
 const CustomArrowBackIcon = styled(ArrowBackIcon)`
   color: red;
 `;
@@ -188,9 +126,6 @@ export {
   VerticalLine,
   ProductPageWrapper,
   CardsWrapper,
-  CardContainer,
-  SectionOne,
-  SectionThree,
   ImageWrapper,
   CustomArrowBackIcon,
   CustomArrowForwardIcon,
