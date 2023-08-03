@@ -53,6 +53,7 @@ const Card = ({ product }: CardProps) => {
           <Typography
             sx={{
               transition: 'all 0.4s ease-in-out',
+              color: '#F1F1F1'
             }}
           >
             {product?.title}
