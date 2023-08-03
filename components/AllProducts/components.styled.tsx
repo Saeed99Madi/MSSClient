@@ -1,4 +1,4 @@
-import { styled, Select, TextField } from '@mui/material';
+import { styled, Select, TextField, Box, Typography } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
@@ -116,6 +116,74 @@ const CustomArrowForwardIcon = styled(ArrowForwardIcon)`
   color: red;
 `;
 
+const CardContainer = styled(Box)({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'flex-end',
+  flexDirection: 'column',
+  maxWidth: '250px',
+  height: '350px',
+  position: 'relative',
+  border: '1px solid #ccc',
+  backgroundColor: '#f1f1f1',
+  borderRadius: '40px',
+  flex: '1 1 200px',
+  transition: 'all 0.4s ease-in-out',
+});
+
+const ProductLink = styled(Typography)({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'flex-end',
+  backgroundColor: '#1F1F22',
+  width: '100%',
+  height: '100px',
+  borderBottomLeftRadius: '40px',
+  borderBottomRightRadius: '40px',
+  position: 'absolute',
+  left: '0',
+  bottom: '0',
+  transition: 'all 0.4s ease-in-out',
+  cursor: 'pointer',
+});
+
+const CardContent = styled(Box)({
+  width: '100%',
+  position: 'absolute',
+  top: '0',
+  left: '0',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  flexDirection: 'column',
+  backgroundColor: '#f1f1f1',
+  borderRadius: '40px',
+  transition: 'all 0.4s ease-in-out',
+});
+
+const CardImage = styled(Box)({
+  width: '93%',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat',
+  borderRadius: '40px',
+  transition: 'all 0.6s ease-in-out',
+  zIndex: '1',
+});
+
+const TextContainer = styled(Box)({
+  width: '100%',
+  height: '30%',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  flexDirection: 'column',
+  transition: 'all 0.4s ease-in-out',
+  position: 'absolute',
+  left: '50%',
+  transform: 'translate(-50%)',
+});
+
 export {
   HeadContainer,
   HeadText,
@@ -129,4 +197,9 @@ export {
   ImageWrapper,
   CustomArrowBackIcon,
   CustomArrowForwardIcon,
+  CardContainer,
+  ProductLink,
+  CardContent,
+  CardImage,
+  TextContainer,
 };
