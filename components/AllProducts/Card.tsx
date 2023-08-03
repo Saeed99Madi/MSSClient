@@ -31,6 +31,7 @@ const Card = ({ product }: CardProps) => {
       <ProductLink
         sx={{
           pb: '15px',
+          color: '#F1F1F1',
         }}
         onClick={() => {
           navigate(`product/${product.id}`);
@@ -53,7 +54,6 @@ const Card = ({ product }: CardProps) => {
           <Typography
             sx={{
               transition: 'all 0.4s ease-in-out',
-              color: '#F1F1F1',
             }}
           >
             {product?.title}
