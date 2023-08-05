@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import useTranslation from 'next-translate/useTranslation';
 import { useEffect, useState } from 'react';
 
@@ -29,10 +30,16 @@ export const NavHeader = () => {
   }, []);
 
   useEffect(() => {}, [categories]);
+
   const menuDisActive = (path: string) => {
     setActive(false);
-    // eslint-disable-next-line no-restricted-globals
-    location.href = path;
+    if (location.pathname === '/' && path === '/') {
+      location.href = '#home';
+    } else if (location.pathname !== '/') {
+      location.href = `/${path}`;
+    } else {
+      location.href = path;
+    }
   };
   const menuActive = () => {
     setActive(true);
@@ -58,7 +65,7 @@ export const NavHeader = () => {
           </Typography>
           <Typography
             sx={{ cursor: 'pointer' }}
-            onClick={() => menuDisActive('/contacts')}
+            onClick={() => menuDisActive('#contact')}
           >
             <Diversity1IconNav />
             {t('Contact Us')}

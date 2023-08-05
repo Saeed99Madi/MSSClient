@@ -37,8 +37,6 @@ const Card = ({ product }: { product: IProduct }) => {
       <img
         src={`${BASE_UEL}/products/${product.cover}?w=248&fit=crop&auto=format`}
         srcSet={`${BASE_UEL}/products/${product.cover}?w=248&fit=crop&auto=format&dpr=2 2x`}
-        // src={`${product.img}?w=248&fit=crop&auto=format`}
-        // srcSet={`${product.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
         alt={product.title}
         loading="lazy"
       />
