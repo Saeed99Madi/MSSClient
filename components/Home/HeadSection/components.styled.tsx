@@ -8,7 +8,6 @@ const HeadText = styled('h1')({
   fontSize: '48px',
   width: '60%',
   textAlign: 'center',
-  margin: '0',
   '@media screen and (max-width: 850px)': {
     fontSize: '24px',
   },
@@ -121,7 +120,7 @@ const ImageWrapper = styled('div')({
     'url("https://res.cloudinary.com/dxkdwp3w3/image/upload/v1688565578/ynzbhraa7fpbawhx5uj1.png")',
   backgroundSize: 'cover',
   backgroundPosition: 'center',
-
+  marginTop: '50px',
   '@media screen and (max-width: 768px)': {
     backgroundSize: 'contain',
     backgroundRepeat: 'no-repeat',
@@ -137,7 +136,7 @@ const ImageWrapper = styled('div')({
 const Image = styled('img')({
   width: '200px',
   height: '200px',
-  marginBottom: '2rem',
+  marginBottom: '0rem',
 
   '@media screen and (max-width: 768px)': {
     width: '150px',
