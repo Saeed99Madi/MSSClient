@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import {
   Grid,
   Input,
@@ -20,32 +21,52 @@ import {
 } from './components.styled';
 import { BASE_UEL } from '../../config';
 
-const LinkStyle = { color: '#000000', textDecoration: 'none', padding: '1rem' };
+const LinkStyle = {
+  color: '#000000',
+  textDecoration: 'none',
+  cursor: 'pointer',
+  padding: '1rem',
+};
 const Footer = () => {
+  const menuDisActive = (path: string) => {
+    if (location.pathname === '/' && path === '/') {
+      location.href = '#home';
+    } else if (location.pathname !== '/') {
+      location.href = `/${path}`;
+    } else {
+      location.href = path;
+    }
+  };
   return (
     <FooterContainer>
       <img src={`${BASE_UEL}settings/Group.png`} alt="logo" />
       <Grid container justifyContent="center">
         <Grid item>
           <Tooltip disableFocusListener title="Home">
-            <Link sx={LinkStyle} href="#home">
+            <Typography sx={LinkStyle} onClick={() => menuDisActive('/')}>
               Home
-            </Link>
+            </Typography>
           </Tooltip>
         </Grid>
         <Grid item>
-          <Tooltip disableFocusListener title="Home">
-            <Link sx={LinkStyle} href="#contact">
+          <Tooltip disableFocusListener title="Contact">
+            <Typography
+              sx={LinkStyle}
+              onClick={() => menuDisActive('#contact')}
+            >
               Contact Us
-            </Link>
+            </Typography>
           </Tooltip>
         </Grid>
 
         <Grid item>
-          <Tooltip disableFocusListener title="Home">
-            <Link sx={LinkStyle} href="#services">
+          <Tooltip disableFocusListener title="About Us">
+            <Typography
+              sx={LinkStyle}
+              onClick={() => menuDisActive('#services')}
+            >
               who we are
-            </Link>
+            </Typography>
           </Tooltip>
         </Grid>
       </Grid>
