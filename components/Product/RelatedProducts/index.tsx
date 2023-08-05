@@ -44,24 +44,15 @@ const settings = {
   prevArrow: <ArrowsRight />,
 };
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const RelatedProducts = ({ product }: { product: IProduct }) => {
+const RelatedProducts = ({ products }: { products: IProduct[] }) => {
   return (
     <RelatedProductWrapper>
       <h2>Related products</h2>
       <ProductsCardWrapper>
         <Slider {...settings}>
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+          {products.map(product => (
+            <ProductCard key={product.id} product={product} />
+          ))}
         </Slider>
       </ProductsCardWrapper>
     </RelatedProductWrapper>

@@ -41,7 +41,7 @@ const ProductDetails = ({ product }: { product: IProduct }) => {
             </DownloadButton>
           </Link>
         ) : null}
-        <Link href="/contacts" style={{ textDecoration: 'none' }}>
+        <Link href="/#contact" style={{ textDecoration: 'none' }}>
           <ContactButton>contact us</ContactButton>
         </Link>
       </ButtonsWrapper>
