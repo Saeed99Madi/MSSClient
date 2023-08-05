@@ -1,7 +1,7 @@
-import { Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { Axios, BASE_UEL } from '../../../../config';
+import { Axios } from '../../../../config';
 import { IProduct } from '../../../../interfaces/IProduct';
 import { ImageCard } from '../components.styled';
 
@@ -14,8 +14,13 @@ const Card = ({ product }: { product: IProduct }) => {
     })();
   }, [product]);
   return (
-    <ImageCard key={product.id}>
-      <div className="overview">
+    <ImageCard
+      sx={{
+        borderRadius: '3px',
+      }}
+      key={product.id}
+    >
+      <Box sx={{ width: '100.5%' }} className="overview">
         <Typography
           sx={{
             fontSize: '14px',
@@ -33,10 +38,10 @@ const Card = ({ product }: { product: IProduct }) => {
         >
           {categoryName}
         </Typography>
-      </div>
+      </Box>
       <img
-        src={`${BASE_UEL}/products/${product.cover}?w=248&fit=crop&auto=format`}
-        srcSet={`${BASE_UEL}/products/${product.cover}?w=248&fit=crop&auto=format&dpr=2 2x`}
+        src={product.cover}
+        srcSet={product.cover}
         alt={product.title}
         loading="lazy"
       />
