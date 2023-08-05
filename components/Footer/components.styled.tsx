@@ -16,8 +16,9 @@ const SubscribeContainer = styled('div')({
   display: 'flex',
   width: '40rem',
   justifyContent: 'center',
-  alignItems: 'center',
+  alignItems: 'flex-start',
   padding: '3rem',
+  flexDirection: 'column',
   '@media screen and (max-width: 850px)': {
     width: '20rem',
     padding: '1rem',
