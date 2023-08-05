@@ -19,7 +19,6 @@ import {
   SocialList,
   SubscribeContainer,
 } from './components.styled';
-import { BASE_UEL } from '../../config';
 
 const LinkStyle = {
   color: '#000000',
@@ -39,7 +38,13 @@ const Footer = () => {
   };
   return (
     <FooterContainer>
-      <img src={`${BASE_UEL}settings/Group.png`} alt="logo" />
+      <img
+        src="https://res.cloudinary.com/dt0jfo5xi/image/upload/v1689850157/msr87v9ann0kh1mskum2.png"
+        alt="logo"
+        style={{
+          width: '100px',
+        }}
+      />
       <Grid container justifyContent="center">
         <Grid item>
           <Tooltip disableFocusListener title="Home">
