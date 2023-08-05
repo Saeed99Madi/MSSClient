@@ -1,4 +1,8 @@
 /* eslint-disable no-restricted-globals */
+import { ChangeEvent, useState } from 'react';
+
+import { AxiosError } from 'axios';
+
 import {
   Grid,
   Input,
@@ -19,6 +23,7 @@ import {
   SocialList,
   SubscribeContainer,
 } from './components.styled';
+import { Axios } from '../../config';
 
 const LinkStyle = {
   color: '#000000',
@@ -27,6 +32,46 @@ const LinkStyle = {
   padding: '1rem',
 };
 const Footer = () => {
+  const [email, setEmail] = useState<string>('');
+  const [success, setSuccess] = useState<string>('');
+  const [error, setError] = useState<string>('');
+
+  const handleSubscribe = (
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    setEmail(event.target.value);
+    setError('');
+  };
+
+  const sendEmail = async () => {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (emailRegex.test(email as string)) {
+      try {
+        const { data } = await Axios.post('/subscribe', { email });
+        if (data.status === 201) {
+          setEmail('');
+          setSuccess('Subscribe successfully');
+        } else {
+          setError(data.data as string);
+        }
+      } catch (err) {
+        if ((err as AxiosError).response?.status === 400) {
+          setError(
+            ((err as AxiosError).response?.data as { msg: string })
+              ?.msg as string,
+          );
+        } else {
+          setError('something went wrong!!');
+        }
+      }
+    } else {
+      setError('Please write a valid email');
+    }
+    setTimeout(() => {
+      setSuccess('');
+    }, 2000);
+  };
+
   const menuDisActive = (path: string) => {
     if (location.pathname === '/' && path === '/') {
       location.href = '#home';
@@ -79,16 +124,39 @@ const Footer = () => {
         <InputContainer>
           <Input
             disableUnderline
-            placeholder="Start Now"
+            placeholder="example@gmail.com"
+            onChange={handleSubscribe}
+            type="email"
+            value={email}
             startAdornment={
               <InputAdornment position="start">
                 <CustomEmailIcon />
               </InputAdornment>
             }
           />
-          <RedButton>Subscripe Now</RedButton>
+          <RedButton onClick={() => sendEmail()}>Subscribe Now</RedButton>
         </InputContainer>
         <IconWrapper />
+        {success && (
+          <Typography
+            sx={{
+              m: '10px 0 0 40px',
+              color: 'green',
+            }}
+          >
+            {success}
+          </Typography>
+        )}
+        {error && (
+          <Typography
+            sx={{
+              m: '10px 0 0 40px',
+              color: 'red',
+            }}
+          >
+            {error}
+          </Typography>
+        )}
       </SubscribeContainer>
       <SocialList>
         <Link href="/">
