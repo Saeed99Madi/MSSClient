@@ -62,7 +62,6 @@ const StyledHeader = styled('header')({
   zIndex: '10',
   position: 'relative',
   background: 'rgba(90, 89, 89, 0.0)',
-  backdropFilter: 'blur(1px)',
   height: '5em',
   borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
   top: '0',
