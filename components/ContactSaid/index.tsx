@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 import { Typography } from '@mui/material';
@@ -18,13 +18,29 @@ import {
   Spot,
 } from './components.styled';
 import ContactForm from './ContactForm';
+import { Axios } from '../../config';
 
 const ConatctWithForms = () => {
   const [open, setOpen] = useState<boolean>(false);
+  const [whatsNumber, setWhatsNumber] = useState<string>('');
 
   const handleClickOpen = () => {
     setOpen(true);
   };
+
+  const getWhatsNumber = async () => {
+    try {
+      const { data } = await Axios.get('/whatsapp');
+      setWhatsNumber(data.data);
+      console.log(data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getWhatsNumber();
+  }, []);
 
   return (
     <ContactContainer>
@@ -99,7 +115,8 @@ const ConatctWithForms = () => {
                   textDecoration: 'none',
                   color: '#FFFFFF',
                 }}
-                href="https://api.whatsapp.com/send?phone=970599266293"
+                // eslint-disable-next-line prefer-template
+                href={'https://api.whatsapp.com/send?phone=' + whatsNumber}
                 target="_blank"
               >
                 Contact Us
