@@ -45,7 +45,7 @@ const ContactForm = ({
   };
   return (
     <div>
-      {/* <Dialog open={open} onClose={handleClose}>
+      <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Contact Form</DialogTitle>
         <DialogContent>
           <DialogContentText>
@@ -104,7 +104,7 @@ const ContactForm = ({
           <Button onClick={handleClose}>Cancel</Button>
           <Button onClick={handleSendMessage}>send</Button>
         </DialogActions>
-      </Dialog> */}
+      </Dialog>
     </div>
   );
 };
