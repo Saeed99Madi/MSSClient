@@ -158,7 +158,7 @@ const Footer = () => {
           </Typography>
         )}
       </SubscribeContainer>
-      <SocialList>
+      <SocialList style={{ display: 'flex' }}>
         <Link href="/">
           <FacebookIcon sx={{ color: '#1877F2', fontSize: '2rem' }} />
         </Link>

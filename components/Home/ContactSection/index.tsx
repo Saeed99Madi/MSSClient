@@ -22,8 +22,8 @@ const ContactSection = () => {
 
   const getWhatsNumber = async () => {
     try {
-      const { data } = await Axios.get('/whatsapp');
-      setWhatsNumber(data.data.split('+')[1]);
+      const { data } = await Axios.get('/adminData');
+      setWhatsNumber(data.data.phone.split('+')[1]);
     } catch (error) {
       console.log(error);
     }

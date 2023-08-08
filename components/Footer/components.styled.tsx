@@ -42,9 +42,11 @@ const InputContainer = styled('div')({
 const SocialList = styled('div')({
   display: 'flex',
   gap: '0.2rem',
-  width: '40%',
   justifyContent: 'center',
   alignItems: 'center',
+  '@media screen and (max-width: 850px)': {
+    display: 'none',
+  },
 });
 const IconWrapper = styled('div')({
   '@keyframes spin': {
