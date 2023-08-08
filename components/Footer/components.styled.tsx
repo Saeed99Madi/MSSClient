@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Button } from '@mui/material';
+import { Box, Button } from '@mui/material';
 import EmailIcon from '@mui/icons-material/Email';
 
 const FooterContainer = styled('footer')({
@@ -7,21 +7,27 @@ const FooterContainer = styled('footer')({
   display: 'flex',
   flexDirection: 'column',
   paddingTop: '2rem',
-  justifyContent: 'center',
+  justifyContent: 'space-between',
   alignItems: 'center',
   gap: '2rem',
+  height: '100vh',
+  '@media screen and (max-width: 850px)': {
+    height: '80vh',
+  },
 });
 const SubscribeContainer = styled('div')({
   position: 'relative',
   display: 'flex',
   width: '40rem',
   justifyContent: 'center',
-  alignItems: 'flex-start',
+  alignItems: 'center',
   padding: '3rem',
   flexDirection: 'column',
+  marginTop: '4rem',
   '@media screen and (max-width: 850px)': {
     width: '20rem',
     padding: '1rem',
+    marginTop: '7rem',
   },
 });
 const InputContainer = styled('div')({
@@ -94,6 +100,55 @@ const CustomEmailIcon = styled(EmailIcon)({
   },
 });
 
+const FooterBox = styled(Box)({
+  height: '50%',
+  backgroundColor: '#141418',
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'flex-end',
+  alignItems: 'center',
+  flexDirection: 'column',
+});
+
+const AboutFooter = styled(Box)({
+  display: 'flex',
+  justifyContent: 'flex-start',
+  alignItems: 'flex-start',
+  gap: '5rem',
+  width: '90%',
+});
+
+const FooterLogo = styled(Box)({
+  display: 'flex',
+  justifyContent: 'flex-start',
+  alignItems: 'flex-start',
+  flexDirection: 'column',
+  width: '30%',
+});
+
+const ContactFooter = styled(Box)({
+  width: '30%',
+  display: 'flex',
+  justifyContent: 'flex-start',
+  alignItems: 'flex-start',
+  flexDirection: 'column',
+  gap: '1rem',
+  '@media screen and (max-width: 850px)': {
+    fontSize: '0.5rem',
+  },
+});
+
+const ContactInfo = styled(Box)({
+  display: 'flex',
+  justifyContent: 'flex-start',
+  alignItems: 'flex-start',
+  flexDirection: 'column',
+  gap: '0.5rem',
+  '@media screen and (max-width: 850px)': {
+    fontSize: '0.5rem',
+  },
+});
+
 export {
   FooterContainer,
   SubscribeContainer,
@@ -102,4 +157,9 @@ export {
   IconWrapper,
   RedButton,
   CustomEmailIcon,
+  FooterBox,
+  AboutFooter,
+  FooterLogo,
+  ContactFooter,
+  ContactInfo,
 };

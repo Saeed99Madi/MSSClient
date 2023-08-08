@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-
+/* eslint-disable react/jsx-curly-brace-presence */
 import Link from 'next/link';
 
 import FacebookIcon from '@mui/icons-material/Facebook';
