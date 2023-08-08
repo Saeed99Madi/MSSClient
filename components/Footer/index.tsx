@@ -1,9 +1,11 @@
 /* eslint-disable no-restricted-globals */
-import { ChangeEvent, useState } from 'react';
+/* eslint-disable react/jsx-curly-brace-presence */
+import { ChangeEvent, useEffect, useState } from 'react';
 
 import { AxiosError } from 'axios';
 
 import {
+  Box,
   Grid,
   Input,
   InputAdornment,
@@ -15,8 +17,13 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import GoogleIcon from '@mui/icons-material/Google';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import {
+  AboutFooter,
+  ContactFooter,
+  ContactInfo,
   CustomEmailIcon,
+  FooterBox,
   FooterContainer,
+  FooterLogo,
   IconWrapper,
   InputContainer,
   RedButton,
@@ -26,15 +33,37 @@ import {
 import { Axios } from '../../config';
 
 const LinkStyle = {
-  color: '#000000',
+  color: '#CCC',
   textDecoration: 'none',
   cursor: 'pointer',
-  padding: '1rem',
+  padding: '0.5rem',
+  width: 'fit-content',
+  '@media screen and (max-width: 850px)': {
+    fontSize: '0.5rem',
+  },
 };
+
+interface IAdmin {
+  email: string;
+  phone: string;
+  address: string;
+  bio: string;
+}
 const Footer = () => {
   const [email, setEmail] = useState<string>('');
   const [success, setSuccess] = useState<string>('');
   const [error, setError] = useState<string>('');
+
+  const [admin, setAdmin] = useState<IAdmin>({} as IAdmin);
+
+  const getWhatsNumber = async () => {
+    try {
+      const { data } = await Axios.get('/adminData');
+      setAdmin(data.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const handleSubscribe = (
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -81,45 +110,12 @@ const Footer = () => {
       location.href = path;
     }
   };
+
+  useEffect(() => {
+    getWhatsNumber();
+  }, []);
   return (
     <FooterContainer>
-      <img
-        src="https://res.cloudinary.com/dt0jfo5xi/image/upload/v1689850157/msr87v9ann0kh1mskum2.png"
-        alt="logo"
-        style={{
-          width: '100px',
-        }}
-      />
-      <Grid container justifyContent="center">
-        <Grid item>
-          <Tooltip disableFocusListener title="Home">
-            <Typography sx={LinkStyle} onClick={() => menuDisActive('/')}>
-              Home
-            </Typography>
-          </Tooltip>
-        </Grid>
-        <Grid item>
-          <Tooltip disableFocusListener title="Contact">
-            <Typography
-              sx={LinkStyle}
-              onClick={() => menuDisActive('#contact')}
-            >
-              Contact Us
-            </Typography>
-          </Tooltip>
-        </Grid>
-
-        <Grid item>
-          <Tooltip disableFocusListener title="About Us">
-            <Typography
-              sx={LinkStyle}
-              onClick={() => menuDisActive('#services')}
-            >
-              who we are
-            </Typography>
-          </Tooltip>
-        </Grid>
-      </Grid>
       <SubscribeContainer>
         <InputContainer>
           <Input
@@ -158,29 +154,155 @@ const Footer = () => {
           </Typography>
         )}
       </SubscribeContainer>
-      <SocialList style={{ display: 'flex' }}>
-        <Link href="/">
-          <FacebookIcon sx={{ color: '#1877F2', fontSize: '2rem' }} />
-        </Link>
-        <Link href="/">
-          <GoogleIcon sx={{ color: '#EA4335', fontSize: '2rem' }} />
-        </Link>
-        <Link href="/">
-          <TwitterIcon sx={{ color: '#55ACEE', fontSize: '2rem' }} />
-        </Link>
-      </SocialList>
-      <Typography
-        sx={{
-          color: '#666666',
-          fontSize: '0.7rem',
-          '@media screen and (max-width: 850px)': {
-            fontSize: '0.5rem',
-          },
-        }}
-        paragraph
-      >
-        All Rights Are Reserveed By MSS. By Dev. Said Madi
-      </Typography>
+      <FooterBox sx={{ m: '0' }}>
+        <AboutFooter>
+          <FooterLogo
+            sx={{
+              mt: '-1rem',
+            }}
+          >
+            <img
+              src="https://res.cloudinary.com/dt0jfo5xi/image/upload/v1689850157/msr87v9ann0kh1mskum2.png"
+              alt="logo"
+              style={{
+                width: '100px',
+              }}
+            />
+            {admin && (
+              <Typography
+                sx={{
+                  color: '#CCC',
+                  marginBottom: '1em',
+                }}
+              >
+                {admin.bio}
+              </Typography>
+            )}
+            <SocialList style={{ display: 'flex' }}>
+              <Link href="/">
+                <FacebookIcon sx={{ color: '#1877F2', fontSize: '2rem' }} />
+              </Link>
+              <Link href="/">
+                <GoogleIcon sx={{ color: '#EA4335', fontSize: '2rem' }} />
+              </Link>
+              <Link href="/">
+                <TwitterIcon sx={{ color: '#55ACEE', fontSize: '2rem' }} />
+              </Link>
+            </SocialList>
+          </FooterLogo>
+          <Box sx={{ width: '30%', color: '#FFFFFF' }}>
+            <Box sx={{ mb: '1rem' }}>
+              <Typography
+                sx={{
+                  color: '#FFFFFF',
+                  '@media screen and (max-width: 850px)': {
+                    fontSize: '0.5rem',
+                  },
+                }}
+              >
+                Useful links
+              </Typography>
+            </Box>
+            <Grid container justifyContent="center" direction={'column'}>
+              <Grid item>
+                <Tooltip disableFocusListener title="Home">
+                  <Typography sx={LinkStyle} onClick={() => menuDisActive('/')}>
+                    Home
+                  </Typography>
+                </Tooltip>
+              </Grid>
+              <Grid item>
+                <Tooltip disableFocusListener title="Contact">
+                  <Typography
+                    sx={LinkStyle}
+                    onClick={() => menuDisActive('#contact')}
+                  >
+                    Contact Us
+                  </Typography>
+                </Tooltip>
+              </Grid>
+
+              <Grid item>
+                <Tooltip disableFocusListener title="About Us">
+                  <Typography
+                    sx={LinkStyle}
+                    onClick={() => menuDisActive('#services')}
+                  >
+                    who we are
+                  </Typography>
+                </Tooltip>
+              </Grid>
+            </Grid>
+          </Box>
+          <ContactFooter>
+            <Typography
+              sx={{
+                color: '#FFFFFF',
+                '@media screen and (max-width: 850px)': {
+                  fontSize: '0.5rem',
+                },
+              }}
+            >
+              Contact Us
+            </Typography>
+            <ContactInfo>
+              {admin && (
+                <>
+                  <Typography
+                    sx={{
+                      color: '#FFFFFF',
+                      '@media screen and (max-width: 850px)': {
+                        fontSize: '0.5rem',
+                      },
+                    }}
+                  >
+                    {admin.address}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      color: '#FFFFFF',
+                      '@media screen and (max-width: 850px)': {
+                        fontSize: '0.5rem',
+                      },
+                    }}
+                  >
+                    {admin.email}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      color: '#FFFFFF',
+                      '@media screen and (max-width: 850px)': {
+                        fontSize: '0.5rem',
+                      },
+                    }}
+                  >
+                    {admin.phone}
+                  </Typography>
+                </>
+              )}
+            </ContactInfo>
+          </ContactFooter>
+        </AboutFooter>
+        <Typography
+          sx={{
+            color: '#FFFFFF',
+            backgroundColor: '#141418',
+            fontSize: '0.7rem',
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'flex-start',
+            height: '2rem',
+            mt: '1rem',
+            '@media screen and (max-width: 850px)': {
+              fontSize: '0.5rem',
+            },
+          }}
+          paragraph
+        >
+          All Rights Are Reserveed By MSS. By Dev. Said Madi
+        </Typography>
+      </FooterBox>
     </FooterContainer>
   );
 };
