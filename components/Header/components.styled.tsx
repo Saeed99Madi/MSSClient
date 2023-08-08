@@ -62,7 +62,7 @@ const StyledHeader = styled('header')({
   zIndex: '10',
   position: 'relative',
   background: 'rgba(90, 89, 89, 0.0)',
-  height: '5em',
+  height: '4em',
   borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
   top: '0',
   left: '0',
@@ -70,6 +70,7 @@ const StyledHeader = styled('header')({
   justifyContent: 'space-between',
   alignItems: 'center',
   padding: '0 35px',
+  width: 'calc(100% - 70px)',
   transition: '0.5s ease',
   gap: '1rem',
   '@media screen and (max-width: 850px)': {
@@ -264,6 +265,45 @@ const SignUpButton = styled(Button)({
   },
 });
 
+const HeaderContainer = styled(Box)({
+  zIndex: '10',
+  position: 'relative',
+  background: 'rgba(90, 89, 89, 0.0)',
+  height: '7.5em',
+  borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+  top: '0',
+  left: '0',
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  flexDirection: 'column',
+  transition: '0.5s ease',
+  gap: '1rem',
+  '@media screen and (max-width: 850px)': {
+    gap: '0.5rem',
+    height: '5em',
+    width: '100%',
+  },
+});
+
+const ContactContainer = styled(Box)({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  backgroundColor: '#151518',
+  height: '3.5em',
+  width: '100%',
+});
+
+const TextContainer = styled(Box)({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  color: '#FFFFFF',
+  gap: '2rem',
+  m: '0 40px',
+});
+
 export {
   StyledHeader,
   Navigations,
@@ -286,4 +326,7 @@ export {
   LoginButton,
   SignUpButton,
   SelectLang,
+  HeaderContainer,
+  ContactContainer,
+  TextContainer,
 };
