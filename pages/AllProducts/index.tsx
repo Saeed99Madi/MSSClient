@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import { Stack } from '@mui/system';
 import Pagination from '@mui/material/Pagination';
 import PaginationItem from '@mui/material/PaginationItem';
@@ -35,6 +36,7 @@ const AllProduct = () => {
   );
   const [searchKey, setSearchKey] = useState<string | undefined>('');
 
+  const router = useRouter();
   const handlePageChange = (
     event: React.ChangeEvent<unknown>,
     page: number,
@@ -66,9 +68,8 @@ const AllProduct = () => {
           setIsGetData(false);
         }
       } catch (error) {
-        // eslint-disable-next-line no-console
-        console.log('Error occurred while fetching data:', error);
         setIsLoading(false);
+        router.push('/Errors/ServerError');
       }
     })();
   }, [currentPage, selectedCategory, searchKey]);

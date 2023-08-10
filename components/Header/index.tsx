@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 /* eslint-disable react/jsx-curly-brace-presence */
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import FacebookIcon from '@mui/icons-material/Facebook';
 import GoogleIcon from '@mui/icons-material/Google';
@@ -23,6 +24,7 @@ import { Axios } from '../../config';
 const Header = () => {
   const [whatsNumber, setWhatsNumber] = useState<string>('');
   const [email, setEmail] = useState<string>('');
+  const router = useRouter();
 
   const getWhatsNumber = async () => {
     try {
@@ -30,7 +32,7 @@ const Header = () => {
       setWhatsNumber(data.data.phone);
       setEmail(data.data.email);
     } catch (error) {
-      console.log(error);
+      router.push('/Errors/ServerError');
     }
   };
 

@@ -1,6 +1,7 @@
-import FileDownloadIcon from '@mui/icons-material/FileDownload';
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import { Axios, BASE_UEL } from '../../../config';
 import { IProduct } from '../../../interfaces/IProduct';
 import {
@@ -13,14 +14,18 @@ import {
 
 const ProductDetails = ({ product }: { product: IProduct }) => {
   const [categoryName, setCategoryName] = useState('');
+  const router = useRouter();
+  const getCategories = async () => {
+    const { data } = await Axios.get(`categories/show/${product.CategoryId}`);
+    setCategoryName(data.data.title);
+  };
   useEffect(() => {
     if (product) {
-      (async () => {
-        const { data } = await Axios.get(
-          `categories/show/${product.CategoryId}`,
-        );
-        setCategoryName(data.data.title);
-      })();
+      try {
+        getCategories();
+      } catch (error) {
+        router.push('/Errors/ServerError');
+      }
     }
   }, [product]);
   return (
