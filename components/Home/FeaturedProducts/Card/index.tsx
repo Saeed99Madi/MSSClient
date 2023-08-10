@@ -1,17 +1,25 @@
-import { Box, Typography } from '@mui/material';
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+
+import { Box, Typography } from '@mui/material';
 import { Axios } from '../../../../config';
 import { IProduct } from '../../../../interfaces/IProduct';
 import { ImageCard } from '../components.styled';
 
 const Card = ({ product }: { product: IProduct }) => {
   const [categoryName, setCategoryName] = useState('');
-  useEffect(() => {
-    (async () => {
+  const router = useRouter();
+  const getCategories = async () => {
+    try {
       const { data } = await Axios.get(`categories/show/${product.CategoryId}`);
       setCategoryName(data.data.title);
-    })();
+    } catch (error) {
+      router.push('/Errors/ServerError');
+    }
+  };
+  useEffect(() => {
+    getCategories();
   }, [product]);
   return (
     <ImageCard

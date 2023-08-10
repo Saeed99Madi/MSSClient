@@ -1,6 +1,7 @@
 /* eslint-disable no-restricted-globals */
 /* eslint-disable react/jsx-curly-brace-presence */
 import { ChangeEvent, useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
 import { AxiosError } from 'axios';
 
@@ -53,6 +54,7 @@ const Footer = () => {
   const [email, setEmail] = useState<string>('');
   const [success, setSuccess] = useState<string>('');
   const [error, setError] = useState<string>('');
+  const router = useRouter();
 
   const [admin, setAdmin] = useState<IAdmin>({} as IAdmin);
 
@@ -61,7 +63,7 @@ const Footer = () => {
       const { data } = await Axios.get('/adminData');
       setAdmin(data.data);
     } catch (err) {
-      console.log(err);
+      router.push('/Errors/ServerError');
     }
   };
 
@@ -90,7 +92,7 @@ const Footer = () => {
               ?.msg as string,
           );
         } else {
-          setError('something went wrong!!');
+          router.push('/Errors/ServerError');
         }
       }
     } else {

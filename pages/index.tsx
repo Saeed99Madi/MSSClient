@@ -15,14 +15,19 @@ import ContactSection from '../components/Home/ContactSection';
 import TopCategories from '../components/Home/TopCategories';
 import Layout from '../layouts/main';
 import { IProduct } from '../interfaces/IProduct';
+import ServerError from './Errors/ServerError.jsx';
 
 type Props = {
   products: IProduct[];
+  error: any;
 };
 
 const Home = (props: Props) => {
   const { t } = useTranslation('home');
-  const { products } = props;
+  const { products, error } = props;
+  if (error) {
+    return <ServerError />;
+  }
   return (
     <Box sx={{ margin: '0' }}>
       <HeadSection />

@@ -11,6 +11,7 @@ const Product = () => {
   const [product, setProduct] = useState<IProduct>();
   const [products, setProducts] = useState<IProduct[]>([] as IProduct[]);
 
+  const router = useRouter();
   const {
     query: { id },
   } = useRouter();
@@ -26,8 +27,7 @@ const Product = () => {
         const res = await Axios.get(`/category/products/${CategoryId}`);
         setProducts(res.data.data);
       } catch (err) {
-        // eslint-disable-next-line no-console
-        console.log(err, 'the error');
+        router.push('/Errors/ServerError');
       }
     })();
   }, [id]);

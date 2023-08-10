@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { Typography } from '@mui/material';
 
 import {
@@ -19,13 +20,14 @@ import { Axios } from '../../../config';
 const ContactSection = () => {
   const [openForm, SetOpenForm] = useState<boolean>(false);
   const [whatsNumber, setWhatsNumber] = useState<string>('');
+  const router = useRouter();
 
   const getWhatsNumber = async () => {
     try {
       const { data } = await Axios.get('/adminData');
       setWhatsNumber(data.data.phone.split('+')[1]);
     } catch (error) {
-      console.log(error);
+      router.push('/Errors/ServerError');
     }
   };
 
