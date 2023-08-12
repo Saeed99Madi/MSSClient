@@ -31,8 +31,8 @@ const Home = (props: Props) => {
   return (
     <Box sx={{ margin: '0' }}>
       <HeadSection />
-      <FeaturedProducts products={products} />
       <ServicesList />
+      <FeaturedProducts products={products} />
       <TopCategories />
       <ContactSection />
     </Box>
