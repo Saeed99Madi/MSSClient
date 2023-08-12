@@ -5,15 +5,7 @@ import { useRouter } from 'next/router';
 
 import { AxiosError } from 'axios';
 
-import {
-  Box,
-  Grid,
-  Input,
-  InputAdornment,
-  Link,
-  Tooltip,
-  Typography,
-} from '@mui/material';
+import { Box, Grid, Link, Tooltip, Typography } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import GoogleIcon from '@mui/icons-material/Google';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -21,17 +13,15 @@ import {
   AboutFooter,
   ContactFooter,
   ContactInfo,
-  CustomEmailIcon,
   FooterBox,
   FooterContainer,
   FooterLogo,
-  IconWrapper,
-  InputContainer,
-  RedButton,
+  Last,
+  Links,
   SocialList,
-  SubscribeContainer,
 } from './components.styled';
 import { Axios } from '../../config';
+import Subscribe from './Subscribe';
 
 const LinkStyle = {
   color: '#CCC',
@@ -41,6 +31,7 @@ const LinkStyle = {
   width: 'fit-content',
   '@media screen and (max-width: 850px)': {
     fontSize: '0.5rem',
+    padding: '0.2rem',
   },
 };
 
@@ -118,44 +109,13 @@ const Footer = () => {
   }, []);
   return (
     <FooterContainer>
-      <SubscribeContainer>
-        <InputContainer>
-          <Input
-            disableUnderline
-            placeholder="example@gmail.com"
-            onChange={handleSubscribe}
-            type="email"
-            value={email}
-            startAdornment={
-              <InputAdornment position="start">
-                <CustomEmailIcon />
-              </InputAdornment>
-            }
-          />
-          <RedButton onClick={() => sendEmail()}>Subscribe Now</RedButton>
-        </InputContainer>
-        <IconWrapper />
-        {success && (
-          <Typography
-            sx={{
-              m: '10px 0 0 40px',
-              color: 'green',
-            }}
-          >
-            {success}
-          </Typography>
-        )}
-        {error && (
-          <Typography
-            sx={{
-              m: '10px 0 0 40px',
-              color: 'red',
-            }}
-          >
-            {error}
-          </Typography>
-        )}
-      </SubscribeContainer>
+      <Subscribe
+        handleSubscribe={handleSubscribe}
+        email={email}
+        sendEmail={sendEmail}
+        success={success}
+        error={error}
+      />
       <FooterBox sx={{ m: '0' }}>
         <AboutFooter>
           <FooterLogo
@@ -192,8 +152,55 @@ const Footer = () => {
               </Link>
             </SocialList>
           </FooterLogo>
-          <Box sx={{ width: '30%', color: '#FFFFFF' }}>
-            <Box sx={{ mb: '1rem' }}>
+          <Last>
+            <Box sx={{ width: '30%', color: '#FFFFFF' }}>
+              <Box sx={{ mb: '0.5rem' }}>
+                <Typography
+                  sx={{
+                    color: '#FFFFFF',
+                    '@media screen and (max-width: 850px)': {
+                      fontSize: '0.5rem',
+                    },
+                  }}
+                >
+                  Useful links
+                </Typography>
+              </Box>
+              <Links>
+                <Grid item>
+                  <Tooltip disableFocusListener title="Home">
+                    <Typography
+                      sx={LinkStyle}
+                      onClick={() => menuDisActive('/')}
+                    >
+                      Home
+                    </Typography>
+                  </Tooltip>
+                </Grid>
+                <Grid item>
+                  <Tooltip disableFocusListener title="Contact">
+                    <Typography
+                      sx={LinkStyle}
+                      onClick={() => menuDisActive('#contact')}
+                    >
+                      Contact Us
+                    </Typography>
+                  </Tooltip>
+                </Grid>
+
+                <Grid item>
+                  <Tooltip disableFocusListener title="About Us">
+                    <Typography
+                      sx={LinkStyle}
+                      onClick={() => menuDisActive('#services')}
+                    >
+                      who we are
+                    </Typography>
+                  </Tooltip>
+                </Grid>
+              </Links>
+            </Box>
+            <ContactFooter>
               <Typography
                 sx={{
                   color: '#FFFFFF',
@@ -202,88 +209,46 @@ const Footer = () => {
                   },
                 }}
               >
-                Useful links
+                Contact Us
               </Typography>
-            </Box>
-            <Grid container justifyContent="center" direction={'column'}>
-              <Grid item>
-                <Tooltip disableFocusListener title="Home">
-                  <Typography sx={LinkStyle} onClick={() => menuDisActive('/')}>
-                    Home
-                  </Typography>
-                </Tooltip>
-              </Grid>
-              <Grid item>
-                <Tooltip disableFocusListener title="Contact">
-                  <Typography
-                    sx={LinkStyle}
-                    onClick={() => menuDisActive('#contact')}
-                  >
-                    Contact Us
-                  </Typography>
-                </Tooltip>
-              </Grid>
-
-              <Grid item>
-                <Tooltip disableFocusListener title="About Us">
-                  <Typography
-                    sx={LinkStyle}
-                    onClick={() => menuDisActive('#services')}
-                  >
-                    who we are
-                  </Typography>
-                </Tooltip>
-              </Grid>
-            </Grid>
-          </Box>
-          <ContactFooter>
-            <Typography
-              sx={{
-                color: '#FFFFFF',
-                '@media screen and (max-width: 850px)': {
-                  fontSize: '0.5rem',
-                },
-              }}
-            >
-              Contact Us
-            </Typography>
-            <ContactInfo>
-              {admin && (
-                <>
-                  <Typography
-                    sx={{
-                      color: '#FFFFFF',
-                      '@media screen and (max-width: 850px)': {
-                        fontSize: '0.5rem',
-                      },
-                    }}
-                  >
-                    {admin.address}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      color: '#FFFFFF',
-                      '@media screen and (max-width: 850px)': {
-                        fontSize: '0.5rem',
-                      },
-                    }}
-                  >
-                    {admin.email}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      color: '#FFFFFF',
-                      '@media screen and (max-width: 850px)': {
-                        fontSize: '0.5rem',
-                      },
-                    }}
-                  >
-                    {admin.phone}
-                  </Typography>
-                </>
-              )}
-            </ContactInfo>
-          </ContactFooter>
+              <ContactInfo>
+                {admin && (
+                  <>
+                    <Typography
+                      sx={{
+                        color: '#FFFFFF',
+                        '@media screen and (max-width: 850px)': {
+                          fontSize: '0.5rem',
+                        },
+                      }}
+                    >
+                      {admin.address}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        color: '#FFFFFF',
+                        '@media screen and (max-width: 850px)': {
+                          fontSize: '0.5rem',
+                        },
+                      }}
+                    >
+                      {admin.email}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        color: '#FFFFFF',
+                        '@media screen and (max-width: 850px)': {
+                          fontSize: '0.5rem',
+                        },
+                      }}
+                    >
+                      {admin.phone}
+                    </Typography>
+                  </>
+                )}
+              </ContactInfo>
+            </ContactFooter>
+          </Last>
         </AboutFooter>
         <Typography
           sx={{
