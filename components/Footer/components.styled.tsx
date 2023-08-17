@@ -1,4 +1,4 @@
-import { Box, Button, styled } from '@mui/material';
+import { Box, Button, Typography,styled } from '@mui/material';
 import EmailIcon from '@mui/icons-material/Email';
 
 const FooterContainer = styled('footer')({
@@ -11,7 +11,7 @@ const FooterContainer = styled('footer')({
   gap: '2rem',
   height: 'auto',
   '@media screen and (max-width: 850px)': {
-    height: 'auto',
+    height: '70vh',
   },
 });
 const SubscribeContainer = styled('div')({
@@ -108,6 +108,9 @@ const FooterBox = styled(Box)({
   justifyContent: 'center',
   alignItems: 'center',
   flexDirection: 'column',
+  '@media screen and (max-width: 850px)': {
+    height: '70%',
+  },
 });
 
 const AboutFooter = styled(Box)({
@@ -117,6 +120,12 @@ const AboutFooter = styled(Box)({
   alignItems: 'flex-start',
   gap: '2rem',
   width: '90%',
+  '@media screen and (max-width: 850px)': {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: '2rem',
+  },
 });
 
 const FooterLogo = styled(Box)({
@@ -124,7 +133,12 @@ const FooterLogo = styled(Box)({
   justifyContent: 'flex-start',
   alignItems: 'flex-start',
   flexDirection: 'column',
-  width: '25rem',
+  width: '30%',
+  '@media screen and (max-width: 850px)': {
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
 
 const ContactFooter = styled(Box)({
@@ -150,6 +164,38 @@ const ContactInfo = styled(Box)({
   },
 });
 
+const Last = styled(Box)({
+  display: 'flex',
+  width: '70%',
+  paddingLeft: '9rem',
+  justifyContent: 'space-between',
+  '@media screen and (max-width: 850px)': {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '1rem',
+    justifyContent: 'space-evenly',
+    width: '100%',
+    paddingLeft: '4em',
+  },
+});
+
+const Links = styled(Box)({
+  display: 'flex',
+  justifyContent: 'flex-start',
+  flexDirection: 'column',
+});
+
+const SubscribeTitle = styled(Typography)({
+  position: 'absolute',
+  top: '-25%',
+  left: '7%',
+  color: '#141417',
+  '@media screen and (max-width: 850px)': {
+    fontSize: '1rem',
+    top: '-35%',
+  },
+});
+
 export {
   FooterContainer,
   SubscribeContainer,
@@ -163,4 +209,7 @@ export {
   FooterLogo,
   ContactFooter,
   ContactInfo,
+  Last,
+  Links,
+  SubscribeTitle,
 };
