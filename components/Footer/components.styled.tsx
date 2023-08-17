@@ -1,5 +1,4 @@
-import styled from '@emotion/styled';
-import { Box, Button } from '@mui/material';
+import { Box, Button, styled } from '@mui/material';
 import EmailIcon from '@mui/icons-material/Email';
 
 const FooterContainer = styled('footer')({
@@ -10,9 +9,9 @@ const FooterContainer = styled('footer')({
   justifyContent: 'space-between',
   alignItems: 'center',
   gap: '2rem',
-  height: '100vh',
+  height: 'auto',
   '@media screen and (max-width: 850px)': {
-    height: '80vh',
+    height: 'auto',
   },
 });
 const SubscribeContainer = styled('div')({
@@ -21,13 +20,13 @@ const SubscribeContainer = styled('div')({
   width: '40rem',
   justifyContent: 'center',
   alignItems: 'center',
-  padding: '3rem',
+  padding: '4rem 0',
   flexDirection: 'column',
-  marginTop: '4rem',
+  marginTop: '1.5rem',
   '@media screen and (max-width: 850px)': {
     width: '20rem',
     padding: '1rem',
-    marginTop: '7rem',
+    marginTop: '1.5rem',
   },
 });
 const InputContainer = styled('div')({
@@ -101,20 +100,22 @@ const CustomEmailIcon = styled(EmailIcon)({
 });
 
 const FooterBox = styled(Box)({
-  height: '50%',
+  padding: "3rem 0",
+  height: 'auto',
   backgroundColor: '#141418',
   width: '100%',
   display: 'flex',
-  justifyContent: 'flex-end',
+  justifyContent: 'center',
   alignItems: 'center',
   flexDirection: 'column',
 });
 
 const AboutFooter = styled(Box)({
+  flexWrap: "wrap",
   display: 'flex',
-  justifyContent: 'flex-start',
+  justifyContent: 'center',
   alignItems: 'flex-start',
-  gap: '5rem',
+  gap: '2rem',
   width: '90%',
 });
 
@@ -123,11 +124,11 @@ const FooterLogo = styled(Box)({
   justifyContent: 'flex-start',
   alignItems: 'flex-start',
   flexDirection: 'column',
-  width: '30%',
+  width: '25rem',
 });
 
 const ContactFooter = styled(Box)({
-  width: '30%',
+  width: '25rem',
   display: 'flex',
   justifyContent: 'flex-start',
   alignItems: 'flex-start',

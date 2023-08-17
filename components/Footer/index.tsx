@@ -40,7 +40,7 @@ const LinkStyle = {
   padding: '0.5rem',
   width: 'fit-content',
   '@media screen and (max-width: 850px)': {
-    fontSize: '0.5rem',
+    fontSize: '0.7rem',
   },
 };
 
@@ -161,6 +161,8 @@ const Footer = () => {
           <FooterLogo
             sx={{
               mt: '-1rem',
+              justifyContent: {xs:"center",sm:"center",l:"flex-start",xl:"flex-start" },
+              alignItems: {xs:"center",sm:"centers",l:"flex-start",xl:"flex-start" },
             }}
           >
             <img
@@ -180,7 +182,8 @@ const Footer = () => {
                 {admin.bio}
               </Typography>
             )}
-            <SocialList style={{ display: 'flex' }}>
+            <SocialList sx={{ display: 'flex', justifyContent: {xs:"center",sm:"center",l:"flex-start",xl:"flex-start" },
+              alignItems: {xs:"center",sm:"centers",l:"flex-start",xl:"flex-start" }, }}>
               <Link href="/">
                 <FacebookIcon sx={{ color: '#1877F2', fontSize: '2rem' }} />
               </Link>
@@ -192,21 +195,20 @@ const Footer = () => {
               </Link>
             </SocialList>
           </FooterLogo>
-          <Box sx={{ width: '30%', color: '#FFFFFF' }}>
+          <Box sx={{ width: '25rem', color: '#FFFFFF',  }}>
             <Box sx={{ mb: '1rem' }}>
               <Typography
                 sx={{
                   color: '#FFFFFF',
-                  '@media screen and (max-width: 850px)': {
-                    fontSize: '0.5rem',
-                  },
+                  fontSize: {xs:"0.7rem",sm:"0.8rem",l:"1rem",xl:"1.5rem" },
+                  textAlign: {xs:"center",sm:"center",l:"left",xl:"left" }
                 }}
               >
                 Useful links
               </Typography>
             </Box>
             <Grid container justifyContent="center" direction={'column'}>
-              <Grid item>
+              <Grid item >
                 <Tooltip disableFocusListener title="Home">
                   <Typography sx={LinkStyle} onClick={() => menuDisActive('/')}>
                     Home
@@ -236,13 +238,15 @@ const Footer = () => {
               </Grid>
             </Grid>
           </Box>
-          <ContactFooter>
+          <ContactFooter sx={{  alignItems: {xs:"center",sm:"centers",l:"flex-start",xl:"flex-start" },
+                fontSize: {xs:"0.7rem",sm:"0.8rem",l:"1rem",xl:"1.5rem" },
+                 justifyContent: {xs:"center",sm:"center",l:"flex-start",xl:"flex-start" },
+                  textAlign: {xs:"center",sm:"center",l:"left",xl:"left" }
+                
+              }}>
             <Typography
               sx={{
                 color: '#FFFFFF',
-                '@media screen and (max-width: 850px)': {
-                  fontSize: '0.5rem',
-                },
               }}
             >
               Contact Us
@@ -262,6 +266,7 @@ const Footer = () => {
                   </Typography>
                   <Typography
                     sx={{
+                     
                       color: '#FFFFFF',
                       '@media screen and (max-width: 850px)': {
                         fontSize: '0.5rem',
