@@ -1,4 +1,4 @@
-import { Box, Button, Typography,styled } from '@mui/material';
+import { Box, Button, Typography, styled } from '@mui/material';
 import EmailIcon from '@mui/icons-material/Email';
 
 const FooterContainer = styled('footer')({
@@ -100,7 +100,7 @@ const CustomEmailIcon = styled(EmailIcon)({
 });
 
 const FooterBox = styled(Box)({
-  padding: "3rem 0",
+  padding: '3rem 0',
   height: 'auto',
   backgroundColor: '#141418',
   width: '100%',
@@ -114,7 +114,7 @@ const FooterBox = styled(Box)({
 });
 
 const AboutFooter = styled(Box)({
-  flexWrap: "wrap",
+  flexWrap: 'wrap',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'flex-start',

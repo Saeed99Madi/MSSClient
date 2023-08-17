@@ -30,12 +30,8 @@ const LinkStyle = {
   padding: '0.5rem',
   width: 'fit-content',
   '@media screen and (max-width: 850px)': {
-<<<<<<< HEAD
-    fontSize: '0.7rem',
-=======
     fontSize: '0.5rem',
     padding: '0.2rem',
->>>>>>> d78aacae718e83fc9ad6603412597d9efc961fcc
   },
 };
 
@@ -125,8 +121,18 @@ const Footer = () => {
           <FooterLogo
             sx={{
               mt: '-1rem',
-              justifyContent: {xs:"center",sm:"center",l:"flex-start",xl:"flex-start" },
-              alignItems: {xs:"center",sm:"centers",l:"flex-start",xl:"flex-start" },
+              justifyContent: {
+                xs: 'center',
+                sm: 'center',
+                l: 'flex-start',
+                xl: 'flex-start',
+              },
+              alignItems: {
+                xs: 'center',
+                sm: 'centers',
+                l: 'flex-start',
+                xl: 'flex-start',
+              },
             }}
           >
             <img
@@ -146,8 +152,23 @@ const Footer = () => {
                 {admin.bio}
               </Typography>
             )}
-            <SocialList sx={{ display: 'flex', justifyContent: {xs:"center",sm:"center",l:"flex-start",xl:"flex-start" },
-              alignItems: {xs:"center",sm:"centers",l:"flex-start",xl:"flex-start" }, }}>
+            <SocialList
+              sx={{
+                display: 'flex',
+                justifyContent: {
+                  xs: 'center',
+                  sm: 'center',
+                  l: 'flex-start',
+                  xl: 'flex-start',
+                },
+                alignItems: {
+                  xs: 'center',
+                  sm: 'centers',
+                  l: 'flex-start',
+                  xl: 'flex-start',
+                },
+              }}
+            >
               <Link href="/">
                 <FacebookIcon sx={{ color: '#1877F2', fontSize: '2rem' }} />
               </Link>
@@ -211,8 +232,18 @@ const Footer = () => {
               <Typography
                 sx={{
                   color: '#FFFFFF',
-                  fontSize: {xs:"0.7rem",sm:"0.8rem",l:"1rem",xl:"1.5rem" },
-                  textAlign: {xs:"center",sm:"center",l:"left",xl:"left" }
+                  fontSize: {
+                    xs: '0.7rem',
+                    sm: '0.8rem',
+                    l: '1rem',
+                    xl: '1.5rem',
+                  },
+                  textAlign: {
+                    xs: 'center',
+                    sm: 'center',
+                    l: 'left',
+                    xl: 'left',
+                  },
                 }}
               >
                 Contact Us
