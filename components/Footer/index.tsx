@@ -116,10 +116,23 @@ const Footer = () => {
         success={success}
         error={error}
       />
-      <FooterBox sx={{ m: '0' }}>
+      <FooterBox
+        sx={{
+          flexDirection: {
+            xs: 'center',
+            sm: 'column',
+            md: 'row',
+            l: 'row',
+            xl: 'row',
+          },
+          m: '0',
+        }}
+      >
         <AboutFooter>
           <FooterLogo
             sx={{
+              width: { xs: '70%', sm: '70%', md: '30%', l: '30%', xl: '30%' },
+
               mt: '-1rem',
               justifyContent: {
                 xs: 'center',
@@ -146,6 +159,14 @@ const Footer = () => {
               <Typography
                 sx={{
                   color: '#CCC',
+                  textAlign: {
+                    xs: 'center',
+                    sm: 'center',
+                    md: 'left',
+                    l: 'left',
+                    xl: 'left',
+                  },
+
                   marginBottom: '1em',
                 }}
               >
@@ -180,133 +201,129 @@ const Footer = () => {
               </Link>
             </SocialList>
           </FooterLogo>
-          <Last>
-            <Box sx={{ width: '30%', color: '#FFFFFF' }}>
-              <Box sx={{ mb: '0.5rem' }}>
-                <Typography
-                  sx={{
-                    color: '#FFFFFF',
-                    '@media screen and (max-width: 850px)': {
-                      fontSize: '0.5rem',
-                    },
-                  }}
-                >
-                  Useful links
-                </Typography>
-              </Box>
-              <Links>
-                <Grid item>
-                  <Tooltip disableFocusListener title="Home">
-                    <Typography
-                      sx={LinkStyle}
-                      onClick={() => menuDisActive('/')}
-                    >
-                      Home
-                    </Typography>
-                  </Tooltip>
-                </Grid>
-                <Grid item>
-                  <Tooltip disableFocusListener title="Contact">
-                    <Typography
-                      sx={LinkStyle}
-                      onClick={() => menuDisActive('#contact')}
-                    >
-                      Contact Us
-                    </Typography>
-                  </Tooltip>
-                </Grid>
 
-                <Grid item>
-                  <Tooltip disableFocusListener title="About Us">
-                    <Typography
-                      sx={LinkStyle}
-                      onClick={() => menuDisActive('#services')}
-                    >
-                      who we are
-                    </Typography>
-                  </Tooltip>
-                </Grid>
-              </Links>
-            </Box>
-            <ContactFooter>
+          <Box sx={{ width: '25%', color: '#FFFFFF' }}>
+            <Box sx={{ mb: '0.5rem' }}>
               <Typography
                 sx={{
                   color: '#FFFFFF',
-                  fontSize: {
-                    xs: '0.7rem',
-                    sm: '0.8rem',
-                    l: '1rem',
-                    xl: '1.5rem',
-                  },
-                  textAlign: {
-                    xs: 'center',
-                    sm: 'center',
-                    l: 'left',
-                    xl: 'left',
+                  '@media screen and (max-width: 850px)': {
+                    fontSize: '0.5rem',
                   },
                 }}
               >
-                Contact Us
+                Useful links
               </Typography>
-              <ContactInfo>
-                {admin && (
-                  <>
-                    <Typography
-                      sx={{
-                        color: '#FFFFFF',
-                        '@media screen and (max-width: 850px)': {
-                          fontSize: '0.5rem',
-                        },
-                      }}
-                    >
-                      {admin.address}
-                    </Typography>
-                    <Typography
-                      sx={{
-                        color: '#FFFFFF',
-                        '@media screen and (max-width: 850px)': {
-                          fontSize: '0.5rem',
-                        },
-                      }}
-                    >
-                      {admin.email}
-                    </Typography>
-                    <Typography
-                      sx={{
-                        color: '#FFFFFF',
-                        '@media screen and (max-width: 850px)': {
-                          fontSize: '0.5rem',
-                        },
-                      }}
-                    >
-                      {admin.phone}
-                    </Typography>
-                  </>
-                )}
-              </ContactInfo>
-            </ContactFooter>
-          </Last>
+            </Box>
+            <Links>
+              <Grid item>
+                <Tooltip disableFocusListener title="Home">
+                  <Typography sx={LinkStyle} onClick={() => menuDisActive('/')}>
+                    Home
+                  </Typography>
+                </Tooltip>
+              </Grid>
+              <Grid item>
+                <Tooltip disableFocusListener title="Contact">
+                  <Typography
+                    sx={LinkStyle}
+                    onClick={() => menuDisActive('#contact')}
+                  >
+                    Contact Us
+                  </Typography>
+                </Tooltip>
+              </Grid>
+
+              <Grid item>
+                <Tooltip disableFocusListener title="About Us">
+                  <Typography
+                    sx={LinkStyle}
+                    onClick={() => menuDisActive('#services')}
+                  >
+                    who we are
+                  </Typography>
+                </Tooltip>
+              </Grid>
+            </Links>
+          </Box>
+          <ContactFooter>
+            <Typography
+              sx={{
+                color: '#FFFFFF',
+                fontSize: {
+                  xs: '0.7rem',
+                  sm: '0.8rem',
+                  l: '1rem',
+                  xl: '1.5rem',
+                },
+                textAlign: {
+                  xs: 'center',
+                  sm: 'center',
+                  l: 'left',
+                  xl: 'left',
+                },
+              }}
+            >
+              Contact Us
+            </Typography>
+            <ContactInfo>
+              {admin && (
+                <>
+                  <Typography
+                    sx={{
+                      color: '#FFFFFF',
+                      '@media screen and (max-width: 850px)': {
+                        fontSize: '0.5rem',
+                      },
+                    }}
+                  >
+                    {admin.address}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      color: '#FFFFFF',
+                      '@media screen and (max-width: 850px)': {
+                        fontSize: '0.5rem',
+                      },
+                    }}
+                  >
+                    {admin.email}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      color: '#FFFFFF',
+                      '@media screen and (max-width: 850px)': {
+                        fontSize: '0.5rem',
+                      },
+                    }}
+                  >
+                    {admin.phone}
+                  </Typography>
+                </>
+              )}
+            </ContactInfo>
+          </ContactFooter>
         </AboutFooter>
-        <Typography
-          sx={{
-            color: '#FFFFFF',
-            backgroundColor: '#141418',
-            fontSize: '0.7rem',
-            width: '100%',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'flex-start',
-            height: '2rem',
-            mt: '1rem',
-            '@media screen and (max-width: 850px)': {
-              fontSize: '0.5rem',
-            },
-          }}
-          paragraph
-        >
-          All Rights Are Reserveed By MSS. By Dev. Said Madi
-        </Typography>
       </FooterBox>
+      <Typography
+        sx={{
+          margin: '0',
+          color: '#FFFFFF',
+          backgroundColor: '#141418',
+          fontSize: '0.7rem',
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'flex-start',
+          height: '2rem',
+          '@media screen and (max-width: 850px)': {
+            fontSize: '0.5rem',
+          },
+        }}
+        paragraph
+      >
+        All Rights Are Reserveed By MSS. By Dev. Said Madi
+      </Typography>
     </FooterContainer>
   );
 };

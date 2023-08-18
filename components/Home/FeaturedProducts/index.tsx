@@ -1,4 +1,4 @@
-import { ImageList, useMediaQuery } from '@mui/material';
+import { ImageList, Typography, useMediaQuery } from '@mui/material';
 
 import {
   BlackButton,
@@ -21,12 +21,32 @@ const FeaturedProducts = ({ products }: Props) => {
   return (
     <ProductsListContainer>
       <h2 style={{ margin: '0' }}>Featured Products</h2>
-      <p style={{ margin: '0' }}>
+      <Typography
+        sx={{
+          padding: '0 1rem',
+          textAlign: {
+            xs: 'center',
+            sm: 'center',
+            md: 'left',
+            l: 'left',
+            xl: 'left',
+          },
+        }}
+      >
         Top bought Solar Products sales in Mooie Sterk Solar
-      </p>
+      </Typography>
       <ImageListContainer>
         <ImageList
-          sx={{ padding: '2rem 2rem 2rem 2rem' }}
+          sx={{
+            overflow: 'hidden',
+            padding: {
+              xs: '2rem 0',
+              sm: '2rem 0',
+              md: '2rem',
+              l: '2rem',
+              xl: '2rem',
+            },
+          }}
           variant="masonry"
           gap={10}
           cols={matches ? 4 : 2}

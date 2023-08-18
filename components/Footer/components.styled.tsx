@@ -8,10 +8,9 @@ const FooterContainer = styled('footer')({
   paddingTop: '2rem',
   justifyContent: 'space-between',
   alignItems: 'center',
-  gap: '2rem',
   height: 'auto',
   '@media screen and (max-width: 850px)': {
-    height: '70vh',
+    height: 'auto',
   },
 });
 const SubscribeContainer = styled('div')({
@@ -142,7 +141,7 @@ const FooterLogo = styled(Box)({
 });
 
 const ContactFooter = styled(Box)({
-  width: '25rem',
+  width: '25%',
   display: 'flex',
   justifyContent: 'flex-start',
   alignItems: 'flex-start',
@@ -189,6 +188,7 @@ const SubscribeTitle = styled(Typography)({
   position: 'absolute',
   top: '-25%',
   left: '7%',
+  paddingBottom: '3rem',
   color: '#141417',
   '@media screen and (max-width: 850px)': {
     fontSize: '1rem',
