@@ -31,6 +31,8 @@
     "layouts",
     "locales",
     "pages",
+    "styles",
+    "theme",
     "utils"
   ],
   "exclude": [
