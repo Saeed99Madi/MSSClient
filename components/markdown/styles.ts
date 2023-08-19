@@ -52,7 +52,7 @@ const StyledMarkdown = styled('div')(({ theme }) => {
       padding: theme.spacing(3, 3, 3, 8),
       color: theme.palette.text.secondary,
       borderRadius: theme.shape.borderRadius * 2,
-      backgroundColor: theme.palette.background.neutral,
+
       [theme.breakpoints.up('md')]: {
         width: '80%',
       },
@@ -89,8 +89,6 @@ const StyledMarkdown = styled('div')(({ theme }) => {
       borderRadius: 4,
       whiteSpace: 'pre',
       padding: theme.spacing(0.2, 0.5),
-      color: theme.palette.warning[isLight ? 'darker' : 'lighter'],
-      backgroundColor: theme.palette.warning[isLight ? 'lighter' : 'darker'],
       '&.hljs': { padding: 0, backgroundColor: 'transparent' },
     },
 
@@ -103,9 +101,7 @@ const StyledMarkdown = styled('div')(({ theme }) => {
         padding: theme.spacing(1),
         border: `1px solid ${theme.palette.divider}`,
       },
-      'tbody tr:nth-of-type(odd)': {
-        backgroundColor: theme.palette.background.neutral,
-      },
+      'tbody tr:nth-of-type(odd)': {},
     },
 
     // Checkbox
