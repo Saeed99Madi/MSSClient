@@ -9,11 +9,11 @@ import Box from '@mui/material/Box';
 // import Lightbox, { useLightBox } from 'src/components/lightbox';
 import { Avatar } from '@mui/material';
 import Carousel, { CarouselArrowIndex, useCarousel } from '../carousel';
-import { Slide, useLightBox } from '../lightbox';
+import { useLightBox } from '../lightbox';
 import Image from '../image/image';
 import Lightbox from '../lightbox/lightbox';
 import { bgGradient } from '../../theme/css';
-import { IProduct } from '../../interfaces/IProduct';
+// import { IProduct } from '../../interfaces/IProduct';
 
 // import Carousel, { CarouselArrowIndex, useCarousel } from 'src/components/carousel';
 // types
