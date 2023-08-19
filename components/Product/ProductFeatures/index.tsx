@@ -18,8 +18,8 @@ type Attripute = {
 };
 
 const ProductFeatures = ({ product }: { product: IProduct }) => {
-  return (
-    <SectionWithoutPadding>
+  return product.ProductAttriputes.length > 0 ? (
+    <SectionWithoutPadding sx={{ minHeight: 'auto !important' }}>
       <RedSpot />
       <RectangularImg image="https://ik.imagekit.io/a83g0okds/rec-group.png?updatedAt=1685026476536">
         <YellowSpot />
@@ -34,7 +34,7 @@ const ProductFeatures = ({ product }: { product: IProduct }) => {
           : null}
       </FeaturesListWrapper>
     </SectionWithoutPadding>
-  );
+  ) : null;
 };
 
 export default ProductFeatures;

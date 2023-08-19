@@ -16,6 +16,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "rootDir": "./",
     "jsx": "preserve",
     "incremental": true
   },
@@ -23,8 +24,14 @@
     "next-env.d.ts",
     ".eslintrc.js",
     "next.config.js",
-    "**/*.ts",
-    "**/*.tsx"
+    "components",
+    "config",
+    "hooks",
+    "interfaces",
+    "layouts",
+    "locales",
+    "pages",
+    "utils"
   ],
   "exclude": [
     "node_modules"

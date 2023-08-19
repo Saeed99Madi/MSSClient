@@ -10,7 +10,7 @@ const TopCategoriesContainer = styled('section')({
 const CategoriesList = styled('div')({
   display: 'flex',
   justifyContent: 'center',
-  gap: '1rem',
+  gap: '2rem',
   flexWrap: 'wrap',
 
   //   height: 'auto',
@@ -20,43 +20,37 @@ const RedCard = styled('div')({
   background: 'linear-gradient(90deg, #FF5362 0%, #E52535 100%)',
   display: 'flex',
   flexDirection: 'column',
-  width: '18rem',
+
   justifyContent: 'space-between',
   alignItems: 'center',
   paddingBottom: '2rem',
   gap: '2rem',
-  height: '25rem',
 });
 const YellowCard = styled('div')({
   borderRadius: '15px',
   display: 'flex',
-  width: '18rem',
+
   justifyContent: 'space-between',
   paddingTop: '2rem',
   background: 'linear-gradient(90deg, #F6CD06 0%, #FFB900 100%)',
   flexDirection: 'column-reverse',
   alignItems: 'center',
   gap: '2rem',
-  height: '25rem',
 });
 const BlackCard = styled('div')({
-  paddingTop: '2rem',
   borderRadius: '15px',
   display: 'flex',
-  width: '18rem',
 
   background: 'linear-gradient(90.9deg, #1F1F22 0.72%, #141417 99.18%)',
   flexDirection: 'column',
   alignItems: 'center',
   gap: '2rem',
-  height: '25rem',
 });
 const BlackCardInfo = styled('div')({
   display: 'flex',
   flexDirection: 'row-reverse',
   width: '100%',
-  height: '79%',
-  gap: '2rem',
+  gap: '1rem',
 });
 const BlackCardOverview = styled('div')({
   display: 'flex',

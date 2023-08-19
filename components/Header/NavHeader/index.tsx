@@ -58,7 +58,7 @@ export const NavHeader = () => {
 
           <Typography
             sx={{ cursor: 'pointer' }}
-            onClick={() => menuDisActive('/')}
+            onClick={() => menuDisActive('#home')}
           >
             <HomeIconNav />
             {t('Home')}

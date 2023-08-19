@@ -166,7 +166,6 @@ const Footer = () => {
                     l: 'left',
                     xl: 'left',
                   },
-
                   marginBottom: '1em',
                 }}
               >

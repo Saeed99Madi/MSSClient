@@ -1,5 +1,4 @@
-import { styled } from '@mui/material/styles';
-import { Button } from '@mui/material';
+import { styled, Button } from '@mui/material/';
 import Skeleton from '@mui/material/Skeleton';
 import List from '@mui/material/List';
 import { device } from '../../utils/devices';
@@ -39,29 +38,18 @@ const GlobalStyle = styled('div')`
   }
 `;
 
-const SectionWithPadding = styled('div')(
-  () => ({
-    padding: '62px 16px',
-    display: 'flex',
-    flexDirection: 'column',
-    flexWrap: 'wrap',
-    gap: '4rem',
-  }),
-  `
-  @media ${device.tablet} {
-    flex-direction: row;
-    padding-top: 124px;
-  }
-  `,
-);
+const SectionWithPadding = styled('div')(() => ({
+  display: 'flex',
+  flexDirection: 'column',
+  flexWrap: 'wrap',
+  gap: '4rem',
+}));
 
 const ProductDetailsWrapper = styled('div')(() => ({
-  flex: '1 1 200px',
   height: 'inherit',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
-  width: '100%',
 }));
 
 const CategoryTag = styled('div')(() => ({
@@ -132,11 +120,10 @@ width: 255px;
 
 const ProductImagesWrapper = styled('div')(
   () => ({
-    flex: '1 1 500px',
     display: 'flex',
     flexDirection: 'column',
     gap: '2rem',
-    width: '100%',
+
     overflow: 'hidden',
   }),
   `
@@ -153,7 +140,7 @@ const ImagesWrapper = styled('div')(
     borderRadius: '40px',
     flex: '1 1 300px',
     padding: '15px !important',
-    backgroundImage: `url(${BASE_UEL}/products/${image})`,
+    backgroundImage: `url(${image})`,
     backgroundPosition: '50% !important',
     backgroundSize: 'cover',
     minHeight: '18rem',
@@ -173,7 +160,7 @@ const SmallImagesWrapper = styled('div')(
       flex: '1 1 74px',
       padding: '6px',
       cursor: 'pointer',
-      backgroundImage: `url(${BASE_UEL}/products/${image})`,
+      backgroundImage: `url(${image})`,
       backgroundPosition: '50% !important',
       backgroundSize: 'cover',
       position: 'relative',

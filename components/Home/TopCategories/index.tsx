@@ -25,30 +25,106 @@ const TopCategories = () => {
         Top Categories
       </Typography>
       <CategoriesList>
-        <BlackCard>
-          <BlackCardInfo>
+        <BlackCard
+          sx={{
+            height: {
+              xs: '16rem',
+              sm: '18rem',
+              md: '20rem',
+              l: '29rem',
+              xl: '30rem',
+            },
+            width: {
+              xs: '10rem',
+              sm: '12rem',
+              md: '14rem',
+              l: '18rem',
+              xl: '20rem',
+            },
+          }}
+        >
+          <BlackCardInfo
+            sx={{
+              height: {
+                xs: '50%',
+                sm: '50%',
+                md: '50%',
+                l: '50%',
+                xl: '50%',
+              },
+            }}
+          >
             <img
-              style={{ width: '40%', height: '100%' }}
-              src="https://images.unsplash.com/photo-1673868077539-9c3120f78420?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+              style={{ width: '40%', height: '100%', marginTop: '0.7rem' }}
+              src="https://images.unsplash.com/photo-1605980413988-9ff24c537935?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80"
               alt="Solar Food"
             />
             <BlackCardOverview>
-              <Typography sx={{ color: '#FFFFFF', fontSize: '0.7rem' }}>
+              <Typography
+                sx={{
+                  fontSize: {
+                    xs: '16px',
+                    sm: '16px',
+                    md: '20px',
+                    l: '24px',
+                    xl: '28px',
+                  },
+                  fontWeight: '300',
+                  marginTop: '0.7rem',
+                  color: '#FFFFFF',
+                }}
+              >
                 Category Name
               </Typography>
-              <Typography sx={{ color: '#F6CD06' }}>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                adipisicing elit. Nesciunt dolorum eaque suscipit! adipisicing
-                adipisicing elit.
+              <Typography
+                sx={{
+                  width: {
+                    xs: 'auto',
+                    sm: 'auto',
+                    md: 'auto',
+                    l: 'auto',
+                    xl: 'auto',
+                  },
+                  color: '#F6CD06',
+                  fontSize: {
+                    xs: '11px',
+                    sm: '11px',
+                    md: '16px',
+                    l: '16px',
+                    xl: '1.5rem',
+                  },
+                }}
+              >
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit,
               </Typography>
             </BlackCardOverview>
           </BlackCardInfo>
-          <GrayButton>More Info</GrayButton>
+          <GrayButton sx={{ marginTop: 'auto', marginBottom: '1rem' }}>
+            More Info
+          </GrayButton>
         </BlackCard>
 
-        <YellowCard>
+        <YellowCard
+          sx={{
+            height: {
+              xs: '14rem',
+              sm: '16rem',
+              md: '18rem',
+              l: '27rem',
+              xl: '28rem',
+            },
+            width: {
+              xs: '10rem',
+              sm: '12rem',
+              md: '14rem',
+              l: '18rem',
+              xl: '20rem',
+            },
+          }}
+        >
           <ImageWrapper
             sx={{
+              height: '50%',
               background: 'linear-gradient(to right, #FFFFFF, #F6CD06)',
             }}
           >
@@ -58,7 +134,7 @@ const TopCategories = () => {
                 height: '99.8%',
                 marginTop: 'auto',
               }}
-              src="https://plus.unsplash.com/premium_photo-1661695337810-0f56cde8bdfe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+              src="https://images.unsplash.com/photo-1648135327756-b606e2eb8caa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80"
               alt="solar legs"
             />
           </ImageWrapper>
@@ -71,30 +147,66 @@ const TopCategories = () => {
           >
             <Typography
               sx={{
-                width: '50%',
+                width: '70%',
                 textAlign: 'center',
                 color: '#FFFFFF',
-                fontSize: '0.7rem',
+                fontWeight: '300',
+                fontSize: {
+                  xs: '16px',
+                  sm: '16px',
+                  md: '20px',
+                  l: '24px',
+                  xl: '28px',
+                },
               }}
             >
               Category Name
             </Typography>
-            <Typography sx={{ width: '80%', textAlign: 'center' }}>
+            <Typography
+              sx={{
+                fontSize: {
+                  xs: '11px',
+                  sm: '11px',
+                  md: '16px',
+                  l: '16px',
+                  xl: '1.5rem',
+                },
+                width: '80%',
+                textAlign: 'center',
+              }}
+            >
               Lorem ipsum dolor amet consectetur elit.
             </Typography>
             <BlackButton>More Info</BlackButton>
           </div>
         </YellowCard>
 
-        <RedCard>
-          <ImageWrapper>
+        <RedCard
+          sx={{
+            height: {
+              xs: '14rem',
+              sm: '16rem',
+              md: '18rem',
+              l: '27rem',
+              xl: '28rem',
+            },
+            width: {
+              xs: '10rem',
+              sm: '12rem',
+              md: '14rem',
+              l: '18rem',
+              xl: '20rem',
+            },
+          }}
+        >
+          <ImageWrapper sx={{ height: '50%' }}>
             <img
               style={{
                 width: '99%',
                 height: '99.8%',
                 marginBottom: 'auto',
               }}
-              src="https://plus.unsplash.com/premium_photo-1661695337810-0f56cde8bdfe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+              src="https://images.unsplash.com/photo-1648135327756-b606e2eb8caa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80"
               alt="solar legs"
             />
           </ImageWrapper>
@@ -106,11 +218,34 @@ const TopCategories = () => {
             }}
           >
             <Typography
-              sx={{ width: '50%', textAlign: 'center', fontSize: '0.7rem' }}
+              sx={{
+                width: '70%',
+                textAlign: 'center',
+                fontWeight: '300',
+                fontSize: {
+                  xs: '16px',
+                  sm: '16px',
+                  md: '20px',
+                  l: '24px',
+                  xl: '28px',
+                },
+              }}
             >
               Category Name
             </Typography>
-            <Typography sx={{ width: '80%', textAlign: 'center' }}>
+            <Typography
+              sx={{
+                fontSize: {
+                  xs: '11px',
+                  sm: '11px',
+                  md: '16px',
+                  l: '16px',
+                  xl: '1.5rem',
+                },
+                width: '80%',
+                textAlign: 'center',
+              }}
+            >
               Lorem ipsum dolor amet consectetur elit.
             </Typography>
             <WhiteButton>More Info</WhiteButton>

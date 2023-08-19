@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
+import { Stack } from '@mui/material';
 import { Axios, BASE_UEL } from '../../../config';
 import { IProduct } from '../../../interfaces/IProduct';
 import {
@@ -29,7 +30,7 @@ const ProductDetails = ({ product }: { product: IProduct }) => {
     }
   }, [product]);
   return (
-    <ProductDetailsWrapper>
+    <Stack sx={{ alignItems: 'center' }}>
       <div>
         {categoryName ? <CategoryTag>{categoryName}</CategoryTag> : null}
         <h1>{product.title}</h1>
@@ -37,10 +38,7 @@ const ProductDetails = ({ product }: { product: IProduct }) => {
       </div>
       <ButtonsWrapper>
         {product.catalog ? (
-          <Link
-            href={`${BASE_UEL}/products/${product.catalog}`}
-            style={{ textDecoration: 'none' }}
-          >
+          <Link href={product.catalog} style={{ textDecoration: 'none' }}>
             <DownloadButton startIcon={<FileDownloadIcon />}>
               Download Catalog
             </DownloadButton>
@@ -50,7 +48,7 @@ const ProductDetails = ({ product }: { product: IProduct }) => {
           <ContactButton>contact us</ContactButton>
         </Link>
       </ButtonsWrapper>
-    </ProductDetailsWrapper>
+    </Stack>
   );
 };
 
