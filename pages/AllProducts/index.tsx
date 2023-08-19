@@ -123,6 +123,7 @@ const AllProduct = () => {
           page={currentPage}
           onChange={handlePageChange}
           renderItem={item => (
+            // @ts-ignore
             <PaginationItem
               slots={{
                 previous: CustomArrowBackIcon,
