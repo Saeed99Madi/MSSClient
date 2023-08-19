@@ -31,7 +31,7 @@ const Lightbox = ({
   disabledFullscreen,
   onGetCurrentIndex,
   ...other
-}: LightBoxProps) => {
+}: any) => {
   const totalItems = slides ? slides.length : 0;
 
   return (

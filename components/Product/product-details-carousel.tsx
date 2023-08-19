@@ -211,6 +211,7 @@ const ProductDetailsCarousel = ({ product }: Props) => {
         slides={slides}
         open={lightbox.open}
         close={lightbox.onClose}
+        // @ts-ignore
         onGetCurrentIndex={index => lightbox.setSelected(index)}
       />
     </Box>
