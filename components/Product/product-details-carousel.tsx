@@ -95,7 +95,7 @@ const ProductDetailsCarousel = ({ product }: Props) => {
     })();
   }, [product]);
 
-  const lightbox = useLightBox(slides);
+  const lightbox: any = useLightBox(slides);
 
   const carouselLarge = useCarousel({
     rtl: false,
